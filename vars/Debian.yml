@@ -1,8 +1,6 @@
-# roles/ROLENAME/vars/Debian.yml
+# roles/sqlite/vars/Debian.yml
 # Distribution-specific variables for Ubuntu, Debian, ...
 ---
-ROLENAME_packages:
-  - ROLENAME
-
-ROLENAME_service: ROLENAMEd
+sqlite_packages:
+  - sqlite3
 ...

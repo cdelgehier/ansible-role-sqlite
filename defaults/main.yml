@@ -1,5 +1,7 @@
-# roles/ROLENAME/defaults/main.yml
+# roles/sqlite/defaults/main.yml
 ---
-openio_sds_release: 17.04
-openio_ROLENAME_repo_managed: false
+openio_sqlite_directory: /var/lib/sqlite
+openio_sqlite_user: root
+openio_sqlite_group: root
+openio_sqlite_databases: []
 ...

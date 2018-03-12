@@ -1,24 +1,10 @@
-# roles/ROLENAME/tasks/main.yml
+# roles/sqlite/tasks/main.yml
 ---
 - name: "Include {{ ansible_distribution }} variables"
   include_vars: "{{ item }}"
   with_first_found:
     - "{{ ansible_distribution }}.yml"
     - "{{ ansible_os_family }}.yml"
-  tags: install
-
-- name: Create the 'openio' group
-  group:
-    name: openio
-    gid: "{{ openio_group_openio_gid | default('220')}}"
-  tags: install
-
-- name: Create the 'openio' user
-  user:
-    name: openio
-    comment: "openio account"
-    uid: "{{ openio_user_openio_uid | default('120')}}"
-    group: openio
   tags: install
 
 - name: "Include {{ ansible_distribution }} tasks"
@@ -28,10 +14,21 @@
     - "{{ ansible_os_family }}.yml"
   tags: install
 
-- name: Ensure service is started
-  service:
-    name: "{{ ROLENAME_service }}"
-    state: started
-    enabled: true
-  tags: configure
+- name: Create SQLite directory
+  file:
+    path: "{{ openio_sqlite_directory }}"
+    owner: "{{ openio_sqlite_user }}"
+    group: "{{ openio_sqlite_group }}"
+    mode: 0755
+    state: directory
+
+- name: Create SQLite databases
+  file:
+    name: "{{ openio_sqlite_directory }}/{{ item }}.db"
+    owner: "{{ openio_sqlite_user }}"
+    group: "{{ openio_sqlite_group }}"
+    mode: 0644
+    state: touch
+  with_items: "{{ openio_sqlite_databases }}"
+  changed_when: false
 ...

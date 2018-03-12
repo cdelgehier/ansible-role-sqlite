@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Cedric DELGEHIER <cedric@openio.io>
-  description: PURPOSE
+  description: Install and configure a SQLite
   company: openio.io
   license: Apache
 
@@ -17,6 +17,8 @@ galaxy_info:
 
   galaxy_tags:
     - system
+    - database
+    - SQLite
     
     # List tags for your role here, one per line. A tag is
     # a keyword that describes and categorizes the role.

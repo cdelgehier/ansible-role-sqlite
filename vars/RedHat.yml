@@ -1,8 +1,6 @@
-# roles/ROLENAME/vars/RedHat.yml
+# roles/sqlite/vars/RedHat.yml
 # Distribution-specific variables for RHEL, CentOS, ...
 ---
-ROLENAME_packages:
-  - ROLENAME
-
-ROLENAME_service: ROLENAMEd
+sqlite_packages:
+  - sqlite
 ...
