@@ -5,3 +5,8 @@
   become: true
   roles:
     - role: role_under_test
+      openio_sqlite_directory: /var/lib/travis
+      openio_sqlite_user: root
+      openio_sqlite_group: root
+      openio_sqlite_databases:
+        - travisDB
