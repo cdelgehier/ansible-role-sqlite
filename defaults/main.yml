@@ -1,7 +1,7 @@
 # roles/sqlite/defaults/main.yml
 ---
-openio_sqlite_directory: /var/lib/sqlite
-openio_sqlite_user: root
-openio_sqlite_group: root
-openio_sqlite_databases: []
+sqlite_directory: /var/lib/sqlite
+sqlite_user: root
+sqlite_group: root
+sqlite_databases: []
 ...

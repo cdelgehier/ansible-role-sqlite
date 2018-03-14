@@ -16,19 +16,19 @@
 
 - name: Create SQLite directory
   file:
-    path: "{{ openio_sqlite_directory }}"
-    owner: "{{ openio_sqlite_user }}"
-    group: "{{ openio_sqlite_group }}"
+    path: "{{ sqlite_directory }}"
+    owner: "{{ sqlite_user }}"
+    group: "{{ sqlite_group }}"
     mode: 0755
     state: directory
 
 - name: Create SQLite databases
   file:
-    name: "{{ openio_sqlite_directory }}/{{ item }}.db"
-    owner: "{{ openio_sqlite_user }}"
-    group: "{{ openio_sqlite_group }}"
+    name: "{{ sqlite_directory }}/{{ item }}.db"
+    owner: "{{ sqlite_user }}"
+    group: "{{ sqlite_group }}"
     mode: 0644
     state: touch
-  with_items: "{{ openio_sqlite_databases }}"
+  with_items: "{{ sqlite_databases }}"
   changed_when: false
 ...

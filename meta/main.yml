@@ -1,8 +1,7 @@
 ---
 galaxy_info:
-  author: Cedric DELGEHIER <cedric@openio.io>
+  author: Cedric DELGEHIER 
   description: Install and configure a SQLite
-  company: openio.io
   license: Apache
 
   min_ansible_version: 2.4

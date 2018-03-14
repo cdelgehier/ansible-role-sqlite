@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/open-io/ansible-role-openio-sqlite.svg?branch=master)](https://travis-ci.org/open-io/ansible-role-openio-sqlite)
+[![Build Status](https://travis-ci.org/cdelgehier/ansible-role-sqlite.svg?branch=master)](https://travis-ci.org/cdelgehier/ansible-role-sqlite)
+
 # Ansible role `sqlite`
 
 An Ansible role for SQLite. Specifically, the responsibilities of this role are to:
@@ -15,10 +16,10 @@ An Ansible role for SQLite. Specifically, the responsibilities of this role are 
 
 | Variable   | Default | Comments (type)  |
 | :---       | :---    | :---             |
-| `openio_sqlite_databases` | `[]` | File name in `openio_sqlite_directory``s name will be suffixed by ".db" |
-| `openio_sqlite_directory` | `/var/lib/sqlite` | Databases directory  |
-| `openio_sqlite_group` | `root` | Name of the group that should own the database |
-| `openio_sqlite_user` | `root` | Name of the user that should own the database |
+| `sqlite_databases` | `[]` | File name in `sqlite_directory``s name will be suffixed by ".db" |
+| `sqlite_directory` | `/var/lib/sqlite` | Databases directory  |
+| `sqlite_group` | `root` | Name of the group that should own the database |
+| `sqlite_user` | `root` | Name of the user that should own the database |
 
 ## Dependencies
 
@@ -32,10 +33,10 @@ No dependencies.
   become: true
   roles:
     - role: sqlite
-      openio_sqlite_directory: /var/lib/keystone
-      openio_sqlite_user: keystone
-      openio_sqlite_group: keystone
-      openio_sqlite_databases:
+      sqlite_directory: /var/lib/keystone
+      sqlite_user: keystone
+      sqlite_group: keystone
+      sqlite_databases:
         - keystone
 
 ```
